@@ -1,20 +1,23 @@
 # Skies
 
-To start your Phoenix server:
+A phoenix app, allows me to live-test Imago [(link)](https://github.com/lucassifoni/imago).
+I'd like to grow it to sky classification & cloud shape sorting. It will drive the features added to Imago.
+The pictures shown below come from a three-year live capture done for [A + B designers](https://aplusbdesigners.com), where their homepage hade a live view of the skies above them.
 
-  * Install dependencies with `mix deps.get`
-  * Create and migrate your database with `mix ecto.setup`
-  * Install Node.js dependencies with `cd assets && npm install`
-  * Start Phoenix endpoint with `mix phx.server`
+On the picture below, images are overlaid with their 4*4 luminance map.  
+![Screenshot](./Screenshot.jpg)
 
-Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
+### Dependencies
+- An elixir toolchain
+- A Rust toolchain (cargo, namely)
 
-Ready to run in production? Please [check our deployment guides](https://hexdocs.pm/phoenix/deployment.html).
+### Install
 
-## Learn more
+```bash
+$ git clone <repo>
+$ mix deps.get
+$ cd assets && npm install
+```
 
-  * Official website: http://www.phoenixframework.org/
-  * Guides: https://hexdocs.pm/phoenix/overview.html
-  * Docs: https://hexdocs.pm/phoenix
-  * Mailing list: http://groups.google.com/group/phoenix-talk
-  * Source: https://github.com/phoenixframework/phoenix
+### Run
+Please provide a `SKY_PATH` environment variable, like `SKY_PATH=/path/to/pictures` or edit `start.sh` with your own path. 

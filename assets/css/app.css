@@ -32,10 +32,10 @@ html * {
     height: calc(100% - 16px);
     z-index: 1;
     image-rendering: crisp-edges;
-    opacity: 1;
+    opacity: 0.5;
     transition: opacity .6s;
 }
 
 .sky-pic-luminancemap:hover {
-    opacity: 0.5;
+    opacity: 0.1;
 }
