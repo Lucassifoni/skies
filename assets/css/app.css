@@ -1,0 +1,41 @@
+/* This file is for your main application css. */
+@import "../../deps/phoenix_live_view/assets/css/live_view.css";
+
+html * {
+    box-sizing: border-box;
+}
+
+.sky-pics {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.sky-pic-wrapper {
+    flex: 0 0 25%;
+    margin: 0;
+    padding: 8px;
+    font-size: 0;
+    position: relative;
+}
+
+.sky-pic {
+    max-width: 100%;
+    height: auto;
+}
+
+.sky-pic-luminancemap {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    width: calc(100% - 16px);
+    height: calc(100% - 16px);
+    z-index: 1;
+    image-rendering: crisp-edges;
+    opacity: 1;
+    transition: opacity .6s;
+}
+
+.sky-pic-luminancemap:hover {
+    opacity: 0.5;
+}

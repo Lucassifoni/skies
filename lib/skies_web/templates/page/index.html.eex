@@ -1,0 +1,8 @@
+<section class="sky-pics">
+    <%= for image <- @conn.assigns.images do %>
+       <figure class="sky-pic-wrapper">
+           <img class="sky-pic" src="<%= image.url %>" />
+           <canvas width="8" height="8" class="sky-pic-luminancemap" data-bitmap="<%= image.print |> Enum.join(",") %>"/>
+       </figure>
+    <% end %>
+</section>
