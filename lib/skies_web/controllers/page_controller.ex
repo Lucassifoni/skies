@@ -3,7 +3,7 @@ defmodule SkiesWeb.PageController do
 
   def index(conn, _params) do
     conn
-      |> assign(:images, GenServer.call(Skies.Skyview, :images))
+      |> assign(:images, GenServer.call(Skies.SkyviewServer, :images))
       |> render("index.html")
   end
 end

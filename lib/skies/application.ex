@@ -12,7 +12,7 @@ defmodule Skies.Application do
       # Skies.Repo,
       # Start the endpoint when the application starts
       SkiesWeb.Endpoint,
-      Skies.Skyview
+      Skies.SkyviewServer
       # Starts a worker by calling: Skies.Worker.start_link(arg)
       # {Skies.Worker, arg},
     ]

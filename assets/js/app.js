@@ -32,8 +32,8 @@ import "formdata-polyfill"
         const values = bitstring.split(',');
         if (values.length === 0 || values.length % 4 !== 0) return;
         const ctx = canvas.getContext("2d");
-        const n = values.length / 4;
         const mul = values.length === 16 ? 2 : values.length === 64 ? 1 : -1;
+        const n = values.length / (8 / mul);
         if (mul === -1) throw new Error("Luminance values length is incoherent.");
         values.forEach((v, index) => {
             let y = Math.floor(index / n);
