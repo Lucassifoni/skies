@@ -29,7 +29,7 @@ import "formdata-polyfill"
     canvases.forEach((canvas) => {
         const bitstring = canvas.getAttribute('data-bitmap');
         if (!bitstring) return;
-        const values = bitstring.split(',');
+        const values = bitstring.match(/[0-9A-F]{2}/g).map(i => parseInt(i, 16));
         if (values.length === 0 || values.length % 4 !== 0) return;
         const ctx = canvas.getContext("2d");
         const mul = values.length === 16 ? 2 : values.length === 64 ? 1 : -1;

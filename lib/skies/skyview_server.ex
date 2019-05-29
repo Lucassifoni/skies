@@ -40,9 +40,15 @@ defmodule Skies.SkyviewServer do
   defp process_image(%{path: path} = img) do
     case Imago.get_fingerprint_8x8(path) do
       :error -> nil
-      {:ok, print} -> %{ img | print: print }
+      {:ok, print} -> %{ img | print: print |> to_hexstring }
     end
   end
+
+  @doc """
+  Those values are in the range 0-255, so padding where needed lowers the data transfer
+  by allowing us to remove commas in the string representation.
+  """
+  defp to_hexstring(list), do: list |> Enum.map(&(String.pad_leading(Integer.to_string(&1, 16), 2, "0"))) |> Enum.join()
 
   defp build_image_list([], acc), do: acc
   defp build_image_list([x | xs], acc) do
