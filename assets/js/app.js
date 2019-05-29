@@ -24,11 +24,13 @@ import "formdata-polyfill"
 // import { LiveSocket } from "phoenix_live_view"
 
 (() => {
-    const canvases = document.querySelectorAll('.sky-pic-luminancemap');
+    const canvases = document.querySelectorAll('.s-p-l');
     console.log(canvases);
     canvases.forEach((canvas) => {
-        const bitstring = canvas.getAttribute('data-bitmap');
+        const bitstring = canvas.getAttribute('data-bm');
         if (!bitstring) return;
+        canvas.width = 8;
+        canvas.height = 8;
         const values = bitstring.match(/[0-9A-F]{2}/g).map(i => parseInt(i, 16));
         if (values.length === 0 || values.length % 4 !== 0) return;
         const ctx = canvas.getContext("2d");

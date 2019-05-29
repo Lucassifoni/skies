@@ -1,8 +1,5 @@
 <section class="sky-pics">
     <%= for image <- @conn.assigns.images do %>
-       <figure class="sky-pic-wrapper">
-           <img class="sky-pic" src="<%= image.url %>" />
-           <canvas width="8" height="8" class="sky-pic-luminancemap" data-bitmap="<%= image.print %>"/>
-       </figure>
+       <figure class="s-p-w"><img class="s-p" src="<%= image.url %>" /><canvas class="s-p-l" data-bm="<%= image.print %>"></canvas></figure>
     <% end %>
 </section>
